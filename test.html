@@ -12,6 +12,11 @@
 
 	const video = document.querySelector('video');
 
+	navigator.getMedia = (navigator.getUserMedia ||
+                           navigator.webkitGetUserMedia ||
+                           navigator.mozGetUserMedia ||
+                           navigator.msGetUserMedia);
+
 	navigator.mediaDevices.getUserMedia(constraints).then((stream) => {video.srcObject = stream});
 	</script>
 <body>
